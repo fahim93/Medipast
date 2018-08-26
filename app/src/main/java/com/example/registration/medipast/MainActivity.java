@@ -8,19 +8,29 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-    CardView mFirstCardfView;
+    CardView mFirstCardfView,mSecondCardView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         mFirstCardfView = findViewById(R.id.firstcardview);
+        mSecondCardView = findViewById(R.id.secondcardview);
+
         mFirstCardfView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(MainActivity.this,AddDoctorActivity.class);
-                startActivity(intent);
+                Intent adddoctorintent = new Intent(MainActivity.this,AddDoctorActivity.class);
+                startActivity(adddoctorintent);
+            }
+        });
+
+        mSecondCardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent showdoctorintent = new Intent(MainActivity.this,ShowDoctorActivity.class);
+                startActivity(showdoctorintent);
             }
         });
     }
